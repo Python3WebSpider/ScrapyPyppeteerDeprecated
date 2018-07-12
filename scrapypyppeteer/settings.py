@@ -92,3 +92,5 @@ DOWNLOADER_MIDDLEWARES = {
 PYPPETEER_ARGS = {
     'timeout': 8
 }
+
+LOG_LEVEL = 'INFO'

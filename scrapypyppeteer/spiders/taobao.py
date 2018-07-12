@@ -11,7 +11,6 @@ class TaobaoSpider(Spider):
     def start_requests(self):
         for keyword in self.keywords:
             url = self.start_url.format(keyword=keyword)
-            print(url)
             yield Request(url, callback=self.parse_list)
     
     def parse_list(self, response):
