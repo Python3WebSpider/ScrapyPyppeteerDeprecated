@@ -6,10 +6,10 @@ import pyppeteer
 
 class PyppeteerMiddleware():
     def __init__(self, **args):
-        print('ARGS', args)
         self.logger = getLogger(__name__)
         self.loop = asyncio.get_event_loop()
-        self.browser = self.loop.run_until_complete(pyppeteer.launch(headless=True, args=['--no-sandbox', '--debug-print=false']))
+        self.browser = self.loop.run_until_complete(
+            pyppeteer.launch(headless=True, args=['--no-sandbox']))
         self.args = args
     
     def render(self, url, retries=8, script=None, wait=0.2, scrolldown=False, sleep=0,
